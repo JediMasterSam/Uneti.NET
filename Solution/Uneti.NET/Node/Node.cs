@@ -45,7 +45,7 @@ namespace Uneti.NET
         /// <summary>
         /// Is the current node empty? (i.e. there is no information stored in the current node)
         /// </summary>
-        internal bool IsEmpty => Properties.IsEmpty || Properties.All(property => property.IsEmpty);
+        internal bool IsEmpty => Children.IsEmpty && (Properties.IsEmpty || Properties.All(property => property.IsEmpty));
 
         /// <summary>
         /// Has the current node been matched to another node?
